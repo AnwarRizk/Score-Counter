@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+    position: relative;
+}
+
+.timer-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timer {
+    font-size: 3em;
+    margin: 10px;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.scores-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.number-box {
+    font-size: 4em;
+    margin: 10px;
+    padding: 40px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    width: 150px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    font-size: 1.5em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button.increment {
+    background-color: #4caf50;
+    color: white;
+}
+
+.button.increment:hover {
+    background-color: #45a049;
+}
+
+.button.decrement {
+    background-color: #f44336;
+    color: white;
+}
+
+.button.decrement:hover {
+    background-color: #e53935;
+}
+
+.button.control {
+    background-color: #2196F3;
+    color: white;
+}
+
+.button.control.reset {
+    background-color: #ff9800;
+}
+
+.button.control:hover {
+    background-color: #1976D2;
+}
+
+.button.control.reset:hover {
+    background-color: #fb8c00;
+}
+
+.reset-score-container {
+    margin-top: 20px;
+}
+
+.button.reset-score {
+    background-color: #ff9800;
+    color: white;
+}
+
+.button.reset-score:hover {
+    background-color: #fb8c00;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increment and Decrement Numbers with Timer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="timer-container">
+        <div class="timer" id="timer">06:00</div>
+        <div class="button-group">
+            <button class="button control" onclick="startTimer()">Start</button>
+            <button class="button control" onclick="pauseTimer()">Pause</button>
+            <button class="button control reset" onclick="confirmResetTimer()">Reset</button>
+        </div>
+    </div>
+    
+    <div class="scores-container">
+        <div class="container">
+            <div class="number-box" id="p1">0</div>
+            <div class="button-group">
+                <button class="button increment" onclick="incrementNumber('p1')">+</button>
+                <button class="button decrement" onclick="decrementNumber('p1')">-</button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="number-box" id="p2">0</div>
+            <div class="button-group">
+                <button class="button increment" onclick="incrementNumber('p2')">+</button>
+                <button class="button decrement" onclick="decrementNumber('p2')">-</button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="number-box" id="p3">0</div>
+            <div class="button-group">
+                <button class="button increment" onclick="incrementNumber('p3')">+</button>
+                <button class="button decrement" onclick="decrementNumber('p3')">-</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="reset-score-container">
+        <button class="button reset-score" onclick="confirmResetScores()">Reset Scores</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
