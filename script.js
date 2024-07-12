@@ -1,12 +1,23 @@
 let timerInterval;
-let remainingTime = 6 * 60; // 6 minutes in seconds
+let remainingTime = localStorage.getItem('remainingTime') ? parseInt(localStorage.getItem('remainingTime'), 10) : 6 * 60;
 const timerElement = document.getElementById('timer');
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Load saved scores
+    document.getElementById('p1').textContent = localStorage.getItem('p1') || 0;
+    document.getElementById('p2').textContent = localStorage.getItem('p2') || 0;
+    document.getElementById('p3').textContent = localStorage.getItem('p3') || 0;
+    
+    // Initialize timer display
+    updateTimerDisplay();
+});
 
 function incrementNumber(elementId) {
     let element = document.getElementById(elementId);
     let currentNumber = parseInt(element.textContent, 10);
     currentNumber += 1;
     element.textContent = currentNumber;
+    localStorage.setItem(elementId, currentNumber);
 }
 
 function decrementNumber(elementId) {
@@ -14,6 +25,7 @@ function decrementNumber(elementId) {
     let currentNumber = parseInt(element.textContent, 10);
     currentNumber -= 1;
     element.textContent = currentNumber;
+    localStorage.setItem(elementId, currentNumber);
 }
 
 function startTimer() {
@@ -40,6 +52,7 @@ function resetTimer() {
         clearInterval(timerInterval);
     }
     remainingTime = 6 * 60; // Reset to 6 minutes
+    localStorage.setItem('remainingTime', remainingTime);
     updateTimerDisplay();
 }
 
@@ -49,6 +62,7 @@ function updateTimer() {
         return;
     }
     remainingTime -= 1;
+    localStorage.setItem('remainingTime', remainingTime);
     updateTimerDisplay();
 }
 
@@ -57,9 +71,6 @@ function updateTimerDisplay() {
     const seconds = remainingTime % 60;
     timerElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
-
-// Initialize timer display
-updateTimerDisplay();
 
 function confirmResetScores() {
     if (confirm("Are you sure you want to reset the scores?")) {
@@ -71,4 +82,7 @@ function resetScores() {
     document.getElementById('p1').textContent = 0;
     document.getElementById('p2').textContent = 0;
     document.getElementById('p3').textContent = 0;
+    localStorage.setItem('p1', 0);
+    localStorage.setItem('p2', 0);
+    localStorage.setItem('p3', 0);
 }
